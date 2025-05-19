@@ -1,2 +1,2 @@
-# password-manager-
+# password-manager
 tcourse project
