@@ -12,6 +12,7 @@ import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.password_manager.databinding.ActivityMainBinding
+import androidx.core.view.WindowCompat
 import android.view.ViewTreeObserver
 
 
@@ -25,7 +26,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setupKeyboardListener()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { view, insets ->
+            val statusBarHeight = insets.getInsets(WindowInsetsCompat.Type.statusBars()).top
+            view.setPadding(0, statusBarHeight, 0, 0)
+            insets
+        }
 
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.navHostFragment) as NavHostFragment
@@ -63,37 +68,6 @@ class MainActivity : AppCompatActivity() {
                     { navController.navigate(R.id.addEditPasswordFragment) }
                 }
             )
-        }
-    }
-
-    private fun setupKeyboardListener() {
-        val rootView = window.decorView.findViewById<View>(android.R.id.content)
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            // Android 11+
-            rootView.setOnApplyWindowInsetsListener { _, insets ->
-                val isKeyboardVisible = insets.isVisible(WindowInsetsCompat.Type.ime())
-                binding.bottomNavigation.isVisible = !isKeyboardVisible
-                binding.fabAdd.isVisible = !isKeyboardVisible
-                insets
-            }
-        } else {
-            rootView.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
-                private var wasKeyboardOpen = false
-                override fun onGlobalLayout() {
-                    val rect = Rect()
-                    rootView.getWindowVisibleDisplayFrame(rect)
-                    val screenHeight = rootView.rootView.height
-                    val keypadHeight = screenHeight - rect.bottom
-                    val isKeyboardNowVisible = keypadHeight > screenHeight * 0.15
-
-                    if (isKeyboardNowVisible != wasKeyboardOpen) {
-                        wasKeyboardOpen = isKeyboardNowVisible
-                        binding.bottomNavigation.isVisible = !isKeyboardNowVisible
-                        binding.fabAdd.isVisible = !isKeyboardNowVisible
-                    }
-                }
-            })
         }
     }
 }
