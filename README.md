@@ -65,5 +65,6 @@
 ![Детали, копирование, удаление, переход к редактированию](screenshots/img_2.png)
 ![Изменение мастер-пароля](screenshots/img_4.png)
 
+[Скачать APK](https://github.com/ByteTheKernel/password-manager/releases/download/v1.0.0/app-debug.apk)
 
 
