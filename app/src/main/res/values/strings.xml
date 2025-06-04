@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">Password-Manager</string>
+    <string name="passwords_nav">Пароли</string>
+    <string name="settings_nav">Настройки</string>
+    <string name="fragment_auth_hint">Пароль</string>
+    <string name="fragment_auth_button_ok">ОК</string>
+    <string name="fragment_passwords_search_hint">Поиск по названию</string>
+    <string name="fragment_passwords_empty_desc">Нет сохранённых паролей</string>
+    <string name="item_paging_footer_retry">Повторить</string>
+    <string name="fragment_add_edit_password_hint_title">Название</string>
+    <string name="fragment_add_edit_password_hint_login">Логин</string>
+    <string name="fragment_add_edit_password_hint_password">Пароль</string>
+    <string name="fragment_add_edit_password_hint_url">Сайт (URL)</string>
+    <string name="fragment_add_edit_password_hint_description">Описание</string>
+    <string name="fragment_add_edit_password_hint_save">Сохранить</string>
+    <string name="fragment_password_details_login">логин</string>
+    <string name="fragment_password_details_password">пароль</string>
+    <string name="fragment_password_details_url">url</string>
+    <string name="fragment_password_details_description">описание</string>
+    <string name="fragment_password_details_change">Изменить</string>
+    <string name="fragment_password_details_delete">Удалить</string>
+    <string name="fragment_password_details_title">Заголовок</string>
+    <string name="settings_change_password_title">Смена мастер-пароля</string>
+    <string name="settings_old_password">Старый пароль</string>
+    <string name="settings_new_password">Новый пароль</string>
+    <string name="settings_change_password">Сменить пароль</string>
+    <string name="settings_new_password_confirm">Подтвердите новый пароль</string>
 </resources>

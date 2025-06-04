@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ShapeAppearanceOverlay.Fab.Circular" parent="">
+        <item name="cornerSize">50%</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+    <style name="Widget.PasswordManager.FloatingActionButton"
+        parent="Widget.MaterialComponents.FloatingActionButton">
+        <item
+            name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.Fab.Circular</item>
+    </style>
+
+
+</resources>
